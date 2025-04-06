@@ -16,7 +16,7 @@ def check_books():
         is_break=True,
         return_date__lte=due_date_threshold,
         return_date__gte=today  # 排除已过期图书
-    ).select_related('book')
+    )
 
     for book in due_books:
         days_left = (book.return_date - today).days

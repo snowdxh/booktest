@@ -142,7 +142,8 @@ CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERY_BEAT_SCHEDULE = {
     'check-books': {
         'task': 'books.tasks.check_books',
-        'schedule': crontab(hour=0, minute='*/1'),  # 每天8点执行
+        # 'schedule': crontab(minute='*/1'),
+        'schedule': crontab(hour='8', minute='0'),  # 每天8点执行
     },
 }
 
